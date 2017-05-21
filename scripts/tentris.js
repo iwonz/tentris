@@ -212,7 +212,7 @@ var Player = {
 var Game = {
   _lastTime: 0,
   _dropCounter: 0,
-  _dropInterval: 400,
+  _dropInterval: 500,
 
   start: function() {
     Game.update();
@@ -256,6 +256,7 @@ var Game = {
     }
 
     Game.draw();
+
     requestAnimationFrame(Game.update);
   },
 
