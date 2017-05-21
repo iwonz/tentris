@@ -431,3 +431,13 @@ document.addEventListener('keydown', function(event) {
     break;
   }
 });
+
+var hammertime = new Hammer(canvas);
+
+hammertime.on('swipeleft', function(ev) {
+  Player.move(-1);
+});
+
+hammertime.on('swiperight', function(ev) {
+  Player.move(1);
+});
