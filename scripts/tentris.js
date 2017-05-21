@@ -12,6 +12,12 @@ var Settings = {
 document.querySelector('body').style.backgroundColor = Settings._bodyColor;
 
 var canvas = document.getElementById('tentris');
+
+canvas.height = document.body.clientHeight - (document.body.clientHeight / 100 * 10);
+canvas.width = canvas.height / 2;
+
+Settings._blockSize = canvas.width / Settings._arenaSize.w;
+
 var context = canvas.getContext('2d');
 
 var Pieces = {
@@ -207,10 +213,6 @@ var Game = {
   _lastTime: 0,
   _dropCounter: 0,
   _dropInterval: 400,
-
-  _levels: {
-    
-  },
 
   start: function() {
     Game.update();
